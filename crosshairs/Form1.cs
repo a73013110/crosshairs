@@ -17,6 +17,36 @@ namespace crosshairs
             InitializeComponent();
         }
 
+        // 紀錄目前準心是否開啟
+        private bool crosshair_on = false;
+        // 準心開關點擊事件
+        private void switch_btn_Click(object sender, EventArgs e)
+        {
+            if (crosshair_on)   // 目前開啟狀態
+            {
+                crosshair_on = false;
+                switch_btn.BackgroundImage = Properties.Resources.switch_off_icon;
+            }
+            else    // 目前關閉狀態
+            {
+                crosshair_on = true;
+                switch_btn.BackgroundImage = Properties.Resources.switch_on_icon;
+            }
+        }
+
+        // 紀錄目前準心快捷鍵, 預設為Home鍵(值為36)
+        private int keyvalue = 36;
+        // 準心快捷鍵設定
+        private void hot_switch_btn_Click(object sender, EventArgs e)
+        {
+            set_crosshairs_hotkey_dialog set_hotkey = new set_crosshairs_hotkey_dialog();
+            set_hotkey.ShowDialog();
+            keyvalue = set_hotkey.keyvalue;
+            set_hotkey.Dispose();
+            KeysConverter kc = new KeysConverter();
+            hot_switch_textarea.Text = kc.ConvertToString(keyvalue);
+        }
+
         // 紀錄準心種類
         private string type_tag = "0";
         // 準心種類radio btn事件
@@ -43,6 +73,7 @@ namespace crosshairs
             custom_label.AutoSize = false;
             custom_label.BackColor = color_dialog.Color;
             custom_label.Width = 24;
+            custom_radio_btn.Checked = true;
         }
 
         // 點擊自訂顏色中的"說明"按鈕
