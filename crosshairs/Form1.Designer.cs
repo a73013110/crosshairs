@@ -48,15 +48,34 @@
             this.switch_box = new System.Windows.Forms.GroupBox();
             this.switch_btn = new System.Windows.Forms.Button();
             this.hot_switch_box = new System.Windows.Forms.GroupBox();
+            this.hot_switch_textarea = new System.Windows.Forms.TextBox();
             this.hot_switch_label = new System.Windows.Forms.Label();
             this.hot_switch_btn = new System.Windows.Forms.Button();
-            this.hot_switch_textarea = new System.Windows.Forms.TextBox();
+            this.advance_box = new System.Windows.Forms.GroupBox();
+            this.advance_panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.line_width_bar = new System.Windows.Forms.TrackBar();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.line_len_bar = new System.Windows.Forms.TrackBar();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.line_transparency_bar = new System.Windows.Forms.TrackBar();
             this.type_box.SuspendLayout();
             this.type_panel.SuspendLayout();
             this.color_box.SuspendLayout();
             this.color_panel.SuspendLayout();
             this.switch_box.SuspendLayout();
             this.hot_switch_box.SuspendLayout();
+            this.advance_box.SuspendLayout();
+            this.advance_panel.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.line_width_bar)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.line_len_bar)).BeginInit();
+            this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.line_transparency_bar)).BeginInit();
             this.SuspendLayout();
             // 
             // type_box
@@ -319,6 +338,19 @@
             this.hot_switch_box.TabStop = false;
             this.hot_switch_box.Text = "準心開關快捷鍵";
             // 
+            // hot_switch_textarea
+            // 
+            this.hot_switch_textarea.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hot_switch_textarea.Location = new System.Drawing.Point(111, 44);
+            this.hot_switch_textarea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hot_switch_textarea.Multiline = true;
+            this.hot_switch_textarea.Name = "hot_switch_textarea";
+            this.hot_switch_textarea.ReadOnly = true;
+            this.hot_switch_textarea.Size = new System.Drawing.Size(200, 23);
+            this.hot_switch_textarea.TabIndex = 4;
+            this.hot_switch_textarea.Text = "Home";
+            // 
             // hot_switch_label
             // 
             this.hot_switch_label.Location = new System.Drawing.Point(108, 21);
@@ -344,24 +376,145 @@
             this.hot_switch_btn.UseVisualStyleBackColor = true;
             this.hot_switch_btn.Click += new System.EventHandler(this.hot_switch_btn_Click);
             // 
-            // hot_switch_textarea
+            // advance_box
             // 
-            this.hot_switch_textarea.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.advance_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.hot_switch_textarea.Location = new System.Drawing.Point(111, 44);
-            this.hot_switch_textarea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.hot_switch_textarea.Multiline = true;
-            this.hot_switch_textarea.Name = "hot_switch_textarea";
-            this.hot_switch_textarea.ReadOnly = true;
-            this.hot_switch_textarea.Size = new System.Drawing.Size(200, 23);
-            this.hot_switch_textarea.TabIndex = 4;
-            this.hot_switch_textarea.Text = "Home";
+            this.advance_box.Controls.Add(this.advance_panel);
+            this.advance_box.Location = new System.Drawing.Point(14, 221);
+            this.advance_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.advance_box.Name = "advance_box";
+            this.advance_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.advance_box.Size = new System.Drawing.Size(420, 126);
+            this.advance_box.TabIndex = 2;
+            this.advance_box.TabStop = false;
+            this.advance_box.Text = "進階設定";
+            // 
+            // advance_panel
+            // 
+            this.advance_panel.Controls.Add(this.flowLayoutPanel1);
+            this.advance_panel.Controls.Add(this.flowLayoutPanel2);
+            this.advance_panel.Controls.Add(this.flowLayoutPanel3);
+            this.advance_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advance_panel.Location = new System.Drawing.Point(3, 20);
+            this.advance_panel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.advance_panel.Name = "advance_panel";
+            this.advance_panel.Size = new System.Drawing.Size(414, 102);
+            this.advance_panel.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.line_width_bar);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(148, 40);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "粗細";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // line_width_bar
+            // 
+            this.line_width_bar.AutoSize = false;
+            this.line_width_bar.Location = new System.Drawing.Point(44, 3);
+            this.line_width_bar.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.line_width_bar.Minimum = 1;
+            this.line_width_bar.Name = "line_width_bar";
+            this.line_width_bar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.line_width_bar.Size = new System.Drawing.Size(97, 30);
+            this.line_width_bar.TabIndex = 0;
+            this.line_width_bar.Value = 3;
+            this.line_width_bar.Scroll += new System.EventHandler(this.line_width_bar_Scroll);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel2.Controls.Add(this.label2);
+            this.flowLayoutPanel2.Controls.Add(this.line_len_bar);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(157, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(252, 40);
+            this.flowLayoutPanel2.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 30);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "長度/半徑";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // line_len_bar
+            // 
+            this.line_len_bar.AutoSize = false;
+            this.line_len_bar.Location = new System.Drawing.Point(75, 3);
+            this.line_len_bar.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.line_len_bar.Maximum = 50;
+            this.line_len_bar.Minimum = 1;
+            this.line_len_bar.Name = "line_len_bar";
+            this.line_len_bar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.line_len_bar.Size = new System.Drawing.Size(170, 30);
+            this.line_len_bar.TabIndex = 0;
+            this.line_len_bar.Value = 30;
+            this.line_len_bar.Scroll += new System.EventHandler(this.line_len_bar_Scroll);
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel3.Controls.Add(this.label3);
+            this.flowLayoutPanel3.Controls.Add(this.line_transparency_bar);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 49);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(406, 40);
+            this.flowLayoutPanel3.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 30);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "透明度";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // line_transparency_bar
+            // 
+            this.line_transparency_bar.AutoSize = false;
+            this.line_transparency_bar.Location = new System.Drawing.Point(58, 3);
+            this.line_transparency_bar.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.line_transparency_bar.Maximum = 255;
+            this.line_transparency_bar.Minimum = 1;
+            this.line_transparency_bar.Name = "line_transparency_bar";
+            this.line_transparency_bar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.line_transparency_bar.Size = new System.Drawing.Size(341, 30);
+            this.line_transparency_bar.TabIndex = 0;
+            this.line_transparency_bar.Value = 200;
+            this.line_transparency_bar.Scroll += new System.EventHandler(this.line_transparency_bar_Scroll);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 363);
+            this.ClientSize = new System.Drawing.Size(448, 355);
+            this.Controls.Add(this.advance_box);
             this.Controls.Add(this.hot_switch_box);
             this.Controls.Add(this.switch_box);
             this.Controls.Add(this.color_box);
@@ -382,6 +535,15 @@
             this.switch_box.ResumeLayout(false);
             this.hot_switch_box.ResumeLayout(false);
             this.hot_switch_box.PerformLayout();
+            this.advance_box.ResumeLayout(false);
+            this.advance_panel.ResumeLayout(false);
+            this.advance_panel.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.line_width_bar)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.line_len_bar)).EndInit();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.line_transparency_bar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,6 +572,17 @@
         private System.Windows.Forms.Button hot_switch_btn;
         private System.Windows.Forms.Label hot_switch_label;
         private System.Windows.Forms.TextBox hot_switch_textarea;
+        private System.Windows.Forms.GroupBox advance_box;
+        private System.Windows.Forms.FlowLayoutPanel advance_panel;
+        private System.Windows.Forms.TrackBar line_width_bar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TrackBar line_len_bar;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TrackBar line_transparency_bar;
     }
 }
 
