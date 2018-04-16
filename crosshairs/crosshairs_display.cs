@@ -99,7 +99,7 @@ namespace crosshairs
         // 畫全息準心
         private void draw_circle(PaintEventArgs e)
         {
-            
+
         }
 
         // 畫客製準心

@@ -17,7 +17,8 @@ namespace crosshairs
             InitializeComponent();
         }
 
-        public int keyvalue = 36;
+        private int keyvalue = 36;
+        public int get_keyvalue() { return keyvalue; }
         private void set_crosshairs_hotkey_dialog_KeyDown(object sender, KeyEventArgs e)
         {
             keyvalue = e.KeyValue;

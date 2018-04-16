@@ -194,6 +194,7 @@
             this.custom_type_label.Name = "custom_type_label";
             this.custom_type_label.Size = new System.Drawing.Size(34, 18);
             this.custom_type_label.TabIndex = 7;
+            this.custom_type_label.Tag = "";
             this.custom_type_label.Text = "自訂";
             this.custom_type_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.custom_type_label.Click += new System.EventHandler(this.custom_type_label_Click);
@@ -337,6 +338,7 @@
             this.custom_color_label.Name = "custom_color_label";
             this.custom_color_label.Size = new System.Drawing.Size(34, 17);
             this.custom_color_label.TabIndex = 6;
+            this.custom_color_label.Tag = "";
             this.custom_color_label.Text = "自訂";
             this.custom_color_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.custom_color_label.Click += new System.EventHandler(this.custom_color_label_Click);
@@ -675,12 +677,14 @@
             this.Controls.Add(this.type_box);
             this.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "準心";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.type_box.ResumeLayout(false);
             this.type_box.PerformLayout();
             this.type_panel.ResumeLayout(false);

@@ -80,6 +80,15 @@ namespace crosshairs
             config.Save(ConfigurationSaveMode.Modified);
         }
 
+        // 快捷鍵
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == KEY_VALUE)
+            {
+                this.switch_btn_Click(this, null);
+            }
+        }
+
         private Color string_to_rgb(string rgb)
         {
             string[] split = rgb.Split(',');
@@ -112,6 +121,8 @@ namespace crosshairs
                 cd.repaint();
                 // 開啟準心視窗
                 cd.Show();
+                // 將這個視窗移到最前面
+                this.BringToFront();
             }
         }
 
@@ -123,7 +134,7 @@ namespace crosshairs
         {
             Set_crosshairs_hotkey_dialog set_hotkey = new Set_crosshairs_hotkey_dialog();
             set_hotkey.ShowDialog();
-            KEY_VALUE = set_hotkey.keyvalue;
+            KEY_VALUE = set_hotkey.get_keyvalue();
             set_hotkey.Dispose();
             hot_switch_textarea.Text = new KeysConverter().ConvertToString(KEY_VALUE);
         }
@@ -162,6 +173,8 @@ namespace crosshairs
             openFileDialog.ShowDialog();
             CUSTOM_IMAGE = openFileDialog.FileName;
             set_custom_image();
+            custom_type_radio_btn.Checked = true;
+            this.type_radio_btn_Click(custom_type_radio_btn, e);   // 透過此觸發Radio Btn事件
         }
 
         // 準心顏色---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -198,8 +211,7 @@ namespace crosshairs
             custom_color_radio_btn.Checked = true;
             CUSTOM_COLOR = color_dialog.Color;
             if (CUSTOM_COLOR.Equals(Color.White)) MessageBox.Show("不支援白色準心\r\n欲使用白色, 請隨機選擇顏色後, 再將透明度調至最左", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            cd.repaint();
+            this.color_radio_btn_Click(custom_type_radio_btn, e);   // 透過此觸發Radio Btn事件
         }
 
         // 點擊自訂顏色中的"說明"按鈕
