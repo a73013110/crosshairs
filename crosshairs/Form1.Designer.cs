@@ -34,6 +34,8 @@
             this.cross_radio_btn = new System.Windows.Forms.RadioButton();
             this.dot_radio_btn = new System.Windows.Forms.RadioButton();
             this.circle_radio_btn = new System.Windows.Forms.RadioButton();
+            this.custom_type_radio_btn = new System.Windows.Forms.RadioButton();
+            this.custom_type_label = new System.Windows.Forms.Label();
             this.color_box = new System.Windows.Forms.GroupBox();
             this.color_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.red_radio_btn = new System.Windows.Forms.RadioButton();
@@ -42,8 +44,8 @@
             this.green_label = new System.Windows.Forms.Label();
             this.blue_radio_btn = new System.Windows.Forms.RadioButton();
             this.blue_label = new System.Windows.Forms.Label();
-            this.custom_radio_btn = new System.Windows.Forms.RadioButton();
-            this.custom_label = new System.Windows.Forms.Label();
+            this.custom_color_radio_btn = new System.Windows.Forms.RadioButton();
+            this.custom_color_label = new System.Windows.Forms.Label();
             this.color_dialog = new System.Windows.Forms.ColorDialog();
             this.switch_box = new System.Windows.Forms.GroupBox();
             this.switch_btn = new System.Windows.Forms.Button();
@@ -62,6 +64,15 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.line_transparency_bar = new System.Windows.Forms.TrackBar();
+            this.location_box = new System.Windows.Forms.GroupBox();
+            this.location_panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.location_horizontal_bar = new System.Windows.Forms.TrackBar();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.location_vertical_bar = new System.Windows.Forms.TrackBar();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.type_box.SuspendLayout();
             this.type_panel.SuspendLayout();
             this.color_box.SuspendLayout();
@@ -76,6 +87,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.line_len_bar)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.line_transparency_bar)).BeginInit();
+            this.location_box.SuspendLayout();
+            this.location_panel.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.location_horizontal_bar)).BeginInit();
+            this.flowLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.location_vertical_bar)).BeginInit();
             this.SuspendLayout();
             // 
             // type_box
@@ -87,7 +104,7 @@
             this.type_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.type_box.Name = "type_box";
             this.type_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.type_box.Size = new System.Drawing.Size(420, 55);
+            this.type_box.Size = new System.Drawing.Size(420, 51);
             this.type_box.TabIndex = 0;
             this.type_box.TabStop = false;
             this.type_box.Text = "準心種類";
@@ -98,11 +115,13 @@
             this.type_panel.Controls.Add(this.cross_radio_btn);
             this.type_panel.Controls.Add(this.dot_radio_btn);
             this.type_panel.Controls.Add(this.circle_radio_btn);
+            this.type_panel.Controls.Add(this.custom_type_radio_btn);
+            this.type_panel.Controls.Add(this.custom_type_label);
             this.type_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.type_panel.Location = new System.Drawing.Point(3, 20);
             this.type_panel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.type_panel.Name = "type_panel";
-            this.type_panel.Size = new System.Drawing.Size(414, 31);
+            this.type_panel.Size = new System.Drawing.Size(414, 27);
             this.type_panel.TabIndex = 0;
             // 
             // cross_radio_btn
@@ -149,16 +168,46 @@
             this.circle_radio_btn.UseVisualStyleBackColor = true;
             this.circle_radio_btn.Click += new System.EventHandler(this.type_radio_btn_Click);
             // 
+            // custom_type_radio_btn
+            // 
+            this.custom_type_radio_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.custom_type_radio_btn.AutoSize = true;
+            this.custom_type_radio_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.custom_type_radio_btn.Location = new System.Drawing.Point(171, 4);
+            this.custom_type_radio_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.custom_type_radio_btn.Name = "custom_type_radio_btn";
+            this.custom_type_radio_btn.Size = new System.Drawing.Size(14, 20);
+            this.custom_type_radio_btn.TabIndex = 3;
+            this.custom_type_radio_btn.Tag = "3";
+            this.custom_type_radio_btn.UseVisualStyleBackColor = true;
+            this.custom_type_radio_btn.Click += new System.EventHandler(this.type_radio_btn_Click);
+            // 
+            // custom_type_label
+            // 
+            this.custom_type_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.custom_type_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.custom_type_label.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.custom_type_label.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.custom_type_label.Location = new System.Drawing.Point(189, 5);
+            this.custom_type_label.Margin = new System.Windows.Forms.Padding(1, 5, 9, 5);
+            this.custom_type_label.MinimumSize = new System.Drawing.Size(0, 17);
+            this.custom_type_label.Name = "custom_type_label";
+            this.custom_type_label.Size = new System.Drawing.Size(34, 18);
+            this.custom_type_label.TabIndex = 7;
+            this.custom_type_label.Text = "自訂";
+            this.custom_type_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.custom_type_label.Click += new System.EventHandler(this.custom_type_label_Click);
+            // 
             // color_box
             // 
             this.color_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.color_box.Controls.Add(this.color_panel);
-            this.color_box.Location = new System.Drawing.Point(14, 162);
+            this.color_box.Location = new System.Drawing.Point(14, 158);
             this.color_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.color_box.Name = "color_box";
             this.color_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.color_box.Size = new System.Drawing.Size(420, 55);
+            this.color_box.Size = new System.Drawing.Size(420, 51);
             this.color_box.TabIndex = 1;
             this.color_box.TabStop = false;
             this.color_box.Text = "準心顏色";
@@ -171,13 +220,13 @@
             this.color_panel.Controls.Add(this.green_label);
             this.color_panel.Controls.Add(this.blue_radio_btn);
             this.color_panel.Controls.Add(this.blue_label);
-            this.color_panel.Controls.Add(this.custom_radio_btn);
-            this.color_panel.Controls.Add(this.custom_label);
+            this.color_panel.Controls.Add(this.custom_color_radio_btn);
+            this.color_panel.Controls.Add(this.custom_color_label);
             this.color_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.color_panel.Location = new System.Drawing.Point(3, 20);
             this.color_panel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.color_panel.Name = "color_panel";
-            this.color_panel.Size = new System.Drawing.Size(414, 31);
+            this.color_panel.Size = new System.Drawing.Size(414, 27);
             this.color_panel.TabIndex = 0;
             // 
             // red_radio_btn
@@ -191,7 +240,7 @@
             this.red_radio_btn.Location = new System.Drawing.Point(3, 4);
             this.red_radio_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.red_radio_btn.Name = "red_radio_btn";
-            this.red_radio_btn.Size = new System.Drawing.Size(14, 16);
+            this.red_radio_btn.Size = new System.Drawing.Size(14, 19);
             this.red_radio_btn.TabIndex = 0;
             this.red_radio_btn.TabStop = true;
             this.red_radio_btn.Tag = "0";
@@ -205,8 +254,9 @@
             this.red_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.red_label.Location = new System.Drawing.Point(21, 5);
             this.red_label.Margin = new System.Windows.Forms.Padding(1, 5, 9, 5);
+            this.red_label.MinimumSize = new System.Drawing.Size(2, 17);
             this.red_label.Name = "red_label";
-            this.red_label.Size = new System.Drawing.Size(28, 14);
+            this.red_label.Size = new System.Drawing.Size(28, 17);
             this.red_label.TabIndex = 3;
             // 
             // green_radio_btn
@@ -217,7 +267,7 @@
             this.green_radio_btn.Location = new System.Drawing.Point(61, 4);
             this.green_radio_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.green_radio_btn.Name = "green_radio_btn";
-            this.green_radio_btn.Size = new System.Drawing.Size(14, 16);
+            this.green_radio_btn.Size = new System.Drawing.Size(14, 19);
             this.green_radio_btn.TabIndex = 1;
             this.green_radio_btn.Tag = "1";
             this.green_radio_btn.UseVisualStyleBackColor = true;
@@ -230,8 +280,9 @@
             this.green_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.green_label.Location = new System.Drawing.Point(79, 5);
             this.green_label.Margin = new System.Windows.Forms.Padding(1, 5, 9, 5);
+            this.green_label.MinimumSize = new System.Drawing.Size(2, 17);
             this.green_label.Name = "green_label";
-            this.green_label.Size = new System.Drawing.Size(28, 14);
+            this.green_label.Size = new System.Drawing.Size(28, 17);
             this.green_label.TabIndex = 4;
             // 
             // blue_radio_btn
@@ -242,7 +293,7 @@
             this.blue_radio_btn.Location = new System.Drawing.Point(119, 4);
             this.blue_radio_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.blue_radio_btn.Name = "blue_radio_btn";
-            this.blue_radio_btn.Size = new System.Drawing.Size(14, 16);
+            this.blue_radio_btn.Size = new System.Drawing.Size(14, 19);
             this.blue_radio_btn.TabIndex = 2;
             this.blue_radio_btn.Tag = "2";
             this.blue_radio_btn.UseVisualStyleBackColor = true;
@@ -255,38 +306,40 @@
             this.blue_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.blue_label.Location = new System.Drawing.Point(137, 5);
             this.blue_label.Margin = new System.Windows.Forms.Padding(1, 5, 9, 5);
+            this.blue_label.MinimumSize = new System.Drawing.Size(2, 17);
             this.blue_label.Name = "blue_label";
-            this.blue_label.Size = new System.Drawing.Size(28, 14);
+            this.blue_label.Size = new System.Drawing.Size(28, 17);
             this.blue_label.TabIndex = 4;
             // 
-            // custom_radio_btn
+            // custom_color_radio_btn
             // 
-            this.custom_radio_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.custom_radio_btn.AutoSize = true;
-            this.custom_radio_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.custom_radio_btn.Location = new System.Drawing.Point(177, 4);
-            this.custom_radio_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.custom_radio_btn.Name = "custom_radio_btn";
-            this.custom_radio_btn.Size = new System.Drawing.Size(14, 16);
-            this.custom_radio_btn.TabIndex = 5;
-            this.custom_radio_btn.Tag = "3";
-            this.custom_radio_btn.UseVisualStyleBackColor = true;
-            this.custom_radio_btn.Click += new System.EventHandler(this.color_radio_btn_Click);
+            this.custom_color_radio_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.custom_color_radio_btn.AutoSize = true;
+            this.custom_color_radio_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.custom_color_radio_btn.Location = new System.Drawing.Point(177, 4);
+            this.custom_color_radio_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.custom_color_radio_btn.Name = "custom_color_radio_btn";
+            this.custom_color_radio_btn.Size = new System.Drawing.Size(14, 19);
+            this.custom_color_radio_btn.TabIndex = 5;
+            this.custom_color_radio_btn.Tag = "3";
+            this.custom_color_radio_btn.UseVisualStyleBackColor = true;
+            this.custom_color_radio_btn.Click += new System.EventHandler(this.color_radio_btn_Click);
             // 
-            // custom_label
+            // custom_color_label
             // 
-            this.custom_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.custom_label.AutoSize = true;
-            this.custom_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.custom_label.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.custom_label.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.custom_label.Location = new System.Drawing.Point(195, 5);
-            this.custom_label.Margin = new System.Windows.Forms.Padding(1, 5, 9, 5);
-            this.custom_label.Name = "custom_label";
-            this.custom_label.Size = new System.Drawing.Size(31, 14);
-            this.custom_label.TabIndex = 6;
-            this.custom_label.Text = "自訂";
-            this.custom_label.Click += new System.EventHandler(this.custom_label_Click);
+            this.custom_color_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.custom_color_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.custom_color_label.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.custom_color_label.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.custom_color_label.Location = new System.Drawing.Point(195, 5);
+            this.custom_color_label.Margin = new System.Windows.Forms.Padding(1, 5, 9, 5);
+            this.custom_color_label.MinimumSize = new System.Drawing.Size(0, 17);
+            this.custom_color_label.Name = "custom_color_label";
+            this.custom_color_label.Size = new System.Drawing.Size(34, 17);
+            this.custom_color_label.TabIndex = 6;
+            this.custom_color_label.Text = "自訂";
+            this.custom_color_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.custom_color_label.Click += new System.EventHandler(this.custom_color_label_Click);
             // 
             // color_dialog
             // 
@@ -381,11 +434,11 @@
             this.advance_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.advance_box.Controls.Add(this.advance_panel);
-            this.advance_box.Location = new System.Drawing.Point(14, 221);
+            this.advance_box.Location = new System.Drawing.Point(14, 289);
             this.advance_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.advance_box.Name = "advance_box";
             this.advance_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.advance_box.Size = new System.Drawing.Size(420, 126);
+            this.advance_box.Size = new System.Drawing.Size(420, 116);
             this.advance_box.TabIndex = 2;
             this.advance_box.TabStop = false;
             this.advance_box.Text = "進階設定";
@@ -399,7 +452,7 @@
             this.advance_panel.Location = new System.Drawing.Point(3, 20);
             this.advance_panel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.advance_panel.Name = "advance_panel";
-            this.advance_panel.Size = new System.Drawing.Size(414, 102);
+            this.advance_panel.Size = new System.Drawing.Size(414, 92);
             this.advance_panel.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -445,7 +498,7 @@
             this.flowLayoutPanel2.Controls.Add(this.line_len_bar);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(157, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(252, 40);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(254, 40);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // label2
@@ -468,7 +521,7 @@
             this.line_len_bar.Minimum = 1;
             this.line_len_bar.Name = "line_len_bar";
             this.line_len_bar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.line_len_bar.Size = new System.Drawing.Size(170, 30);
+            this.line_len_bar.Size = new System.Drawing.Size(172, 30);
             this.line_len_bar.TabIndex = 0;
             this.line_len_bar.Value = 30;
             this.line_len_bar.Scroll += new System.EventHandler(this.line_len_bar_Scroll);
@@ -481,7 +534,7 @@
             this.flowLayoutPanel3.Controls.Add(this.line_transparency_bar);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 49);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(406, 40);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(408, 40);
             this.flowLayoutPanel3.TabIndex = 6;
             // 
             // label3
@@ -504,16 +557,117 @@
             this.line_transparency_bar.Minimum = 1;
             this.line_transparency_bar.Name = "line_transparency_bar";
             this.line_transparency_bar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.line_transparency_bar.Size = new System.Drawing.Size(341, 30);
+            this.line_transparency_bar.Size = new System.Drawing.Size(343, 30);
             this.line_transparency_bar.TabIndex = 0;
             this.line_transparency_bar.Value = 200;
             this.line_transparency_bar.Scroll += new System.EventHandler(this.line_transparency_bar_Scroll);
+            // 
+            // location_box
+            // 
+            this.location_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.location_box.Controls.Add(this.location_panel);
+            this.location_box.Location = new System.Drawing.Point(14, 213);
+            this.location_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.location_box.Name = "location_box";
+            this.location_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.location_box.Size = new System.Drawing.Size(420, 72);
+            this.location_box.TabIndex = 4;
+            this.location_box.TabStop = false;
+            this.location_box.Text = "準心位置";
+            // 
+            // location_panel
+            // 
+            this.location_panel.Controls.Add(this.flowLayoutPanel6);
+            this.location_panel.Controls.Add(this.flowLayoutPanel5);
+            this.location_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.location_panel.Location = new System.Drawing.Point(3, 20);
+            this.location_panel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.location_panel.Name = "location_panel";
+            this.location_panel.Size = new System.Drawing.Size(414, 48);
+            this.location_panel.TabIndex = 0;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.AutoSize = true;
+            this.flowLayoutPanel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel6.Controls.Add(this.label5);
+            this.flowLayoutPanel6.Controls.Add(this.location_horizontal_bar);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(201, 40);
+            this.flowLayoutPanel6.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label5.Location = new System.Drawing.Point(3, 3);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 30);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "水平";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // location_horizontal_bar
+            // 
+            this.location_horizontal_bar.AutoSize = false;
+            this.location_horizontal_bar.Location = new System.Drawing.Point(44, 3);
+            this.location_horizontal_bar.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.location_horizontal_bar.Maximum = 100;
+            this.location_horizontal_bar.Minimum = -100;
+            this.location_horizontal_bar.Name = "location_horizontal_bar";
+            this.location_horizontal_bar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.location_horizontal_bar.Size = new System.Drawing.Size(150, 30);
+            this.location_horizontal_bar.TabIndex = 0;
+            this.location_horizontal_bar.Scroll += new System.EventHandler(this.location_horizontal_bar_Scroll);
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.AutoSize = true;
+            this.flowLayoutPanel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel5.Controls.Add(this.label4);
+            this.flowLayoutPanel5.Controls.Add(this.location_vertical_bar);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(210, 3);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(201, 40);
+            this.flowLayoutPanel5.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 30);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "垂直";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // location_vertical_bar
+            // 
+            this.location_vertical_bar.AutoSize = false;
+            this.location_vertical_bar.Location = new System.Drawing.Point(44, 3);
+            this.location_vertical_bar.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.location_vertical_bar.Maximum = 100;
+            this.location_vertical_bar.Minimum = -100;
+            this.location_vertical_bar.Name = "location_vertical_bar";
+            this.location_vertical_bar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.location_vertical_bar.Size = new System.Drawing.Size(150, 30);
+            this.location_vertical_bar.TabIndex = 0;
+            this.location_vertical_bar.Scroll += new System.EventHandler(this.location_vertical_bar_Scroll);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "圖片檔 (*.jpg;*.png)|*.jpg;*.png";
+            this.openFileDialog.Title = "開啟客製化準心圖片";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 355);
+            this.ClientSize = new System.Drawing.Size(448, 414);
+            this.Controls.Add(this.location_box);
             this.Controls.Add(this.advance_box);
             this.Controls.Add(this.hot_switch_box);
             this.Controls.Add(this.switch_box);
@@ -525,6 +679,8 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "準心";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.type_box.ResumeLayout(false);
             this.type_box.PerformLayout();
             this.type_panel.ResumeLayout(false);
@@ -544,6 +700,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.line_len_bar)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.line_transparency_bar)).EndInit();
+            this.location_box.ResumeLayout(false);
+            this.location_panel.ResumeLayout(false);
+            this.location_panel.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.location_horizontal_bar)).EndInit();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.location_vertical_bar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -563,8 +726,8 @@
         private System.Windows.Forms.Label red_label;
         private System.Windows.Forms.Label green_label;
         private System.Windows.Forms.Label blue_label;
-        private System.Windows.Forms.RadioButton custom_radio_btn;
-        private System.Windows.Forms.Label custom_label;
+        private System.Windows.Forms.RadioButton custom_color_radio_btn;
+        private System.Windows.Forms.Label custom_color_label;
         private System.Windows.Forms.ColorDialog color_dialog;
         private System.Windows.Forms.GroupBox switch_box;
         private System.Windows.Forms.Button switch_btn;
@@ -583,6 +746,17 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TrackBar line_transparency_bar;
+        private System.Windows.Forms.GroupBox location_box;
+        private System.Windows.Forms.FlowLayoutPanel location_panel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TrackBar location_horizontal_bar;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TrackBar location_vertical_bar;
+        private System.Windows.Forms.RadioButton custom_type_radio_btn;
+        private System.Windows.Forms.Label custom_type_label;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

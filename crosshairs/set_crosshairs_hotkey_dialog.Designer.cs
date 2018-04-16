@@ -1,6 +1,6 @@
 ﻿namespace crosshairs
 {
-    partial class set_crosshairs_hotkey_dialog
+    partial class Set_crosshairs_hotkey_dialog
     {
         /// <summary>
         /// Required designer variable.

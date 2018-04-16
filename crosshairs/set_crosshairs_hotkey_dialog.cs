@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace crosshairs
 {
-    public partial class set_crosshairs_hotkey_dialog : Form
+    public partial class Set_crosshairs_hotkey_dialog : Form
     {
-        public set_crosshairs_hotkey_dialog()
+        public Set_crosshairs_hotkey_dialog()
         {
             InitializeComponent();
         }

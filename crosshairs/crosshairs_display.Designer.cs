@@ -1,6 +1,6 @@
 ﻿namespace crosshairs
 {
-    partial class crosshairs_display
+    partial class Crosshairs_display
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 800);
+            this.ClientSize = new System.Drawing.Size(100, 100);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "crosshairs_display";
             this.ShowInTaskbar = false;

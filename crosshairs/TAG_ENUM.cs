@@ -6,7 +6,8 @@ namespace crosshairs
     {
         CROSS = 0,
         DOT = 1,
-        CIRCLE = 2
+        CIRCLE = 2,
+        CUSTOM = 3
     }
 
     enum COLOR_TAG
