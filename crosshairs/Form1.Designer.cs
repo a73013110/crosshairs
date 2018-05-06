@@ -1,4 +1,4 @@
-﻿namespace crosshairs
+namespace crosshairs
 {
     partial class Form1
     {
@@ -684,7 +684,6 @@
             this.Text = "準心";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.type_box.ResumeLayout(false);
             this.type_box.PerformLayout();
             this.type_panel.ResumeLayout(false);

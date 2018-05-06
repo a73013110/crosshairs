@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.IO;
+using Gma.System.MouseKeyHook;
 
 namespace crosshairs
 {
@@ -30,6 +31,7 @@ namespace crosshairs
             {
                 KEY_VALUE = int.Parse(ConfigurationManager.AppSettings["KEY_VALUE"]);
                 set_key_value();
+                SubcribeHook(); // 掛載鍵盤滑鼠Hook
                 TYPE_TAG = ConfigurationManager.AppSettings["TYPE_TAG"];
                 set_type_tag();
                 COLOR_TAG = ConfigurationManager.AppSettings["COLOR_TAG"];
@@ -58,6 +60,7 @@ namespace crosshairs
             // 後面註解為該值在程式裡的型別(先移除再新增)
             config.AppSettings.Settings.Remove("KEY_VALUE");    // 鍵盤快捷鍵
             config.AppSettings.Settings.Add("KEY_VALUE", KEY_VALUE.ToString()); // int
+            Unsubscribe();  // 解除鍵盤滑鼠Hook
             config.AppSettings.Settings.Remove("TYPE_TAG"); // 準心種類
             config.AppSettings.Settings.Add("TYPE_TAG", TYPE_TAG); // string
             config.AppSettings.Settings.Remove("CUSTOM_IMAGE"); // 自訂準心
@@ -80,19 +83,39 @@ namespace crosshairs
             config.Save(ConfigurationSaveMode.Modified);
         }
 
-        // 快捷鍵
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private Color string_to_rgb(string rgb)
+        {
+            string[] split = rgb.Split(',');
+            return Color.FromArgb(int.Parse(split[0]), int.Parse(split[1]), int.Parse(split[2]));
+        }
+
+        // 快捷鍵----------------------------------------------------------------------------------------------------------------------------------------------------
+        private IKeyboardMouseEvents global_hook;
+        private void SubcribeHook()
+        {
+            global_hook = Hook.GlobalEvents();
+            global_hook.MouseDownExt += GlobalHookMouseDownExt;
+            global_hook.KeyDown += GlobalHookKeyDown;
+        }
+        private void Unsubscribe()
+        {
+            global_hook.MouseDownExt -= GlobalHookMouseDownExt;
+            global_hook.KeyDown -= GlobalHookKeyDown;
+            global_hook.Dispose();
+        }
+        private void GlobalHookMouseDownExt(object sender, MouseEventExtArgs e)
+        {
+            if (e.Button == MouseButtons.XButton2)
+            {
+                this.switch_btn_Click(this, null);
+            }
+        }
+        private void GlobalHookKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == KEY_VALUE)
             {
                 this.switch_btn_Click(this, null);
             }
-        }
-
-        private Color string_to_rgb(string rgb)
-        {
-            string[] split = rgb.Split(',');
-            return Color.FromArgb(int.Parse(split[0]), int.Parse(split[1]), int.Parse(split[2]));
         }
 
         // 準心開關---------------------------------------------------------------------------------------------------------------------------------------------------
